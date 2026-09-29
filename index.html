@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salamat, Guro! | Teachers' Month</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Floating decorations -->
+  <div class="stars">
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+    <div class="star">•</div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow">Pagpupugay sa mga Guro</div>
+
+        <h1>
+          Para sa mga<br>
+          <span>Gurong</span><br>
+          Walang Kapalit.
+        </h1>
+
+        <p class="hero-text">
+          Hindi lang kayo nagtuturo ng lessons.
+          Kayo ang nagtuturo sa amin kung paano mangarap,
+          bumangon, at maniwala sa sarili.
+        </p>
+
+        <button class="open-btn" onclick="openLetter()">
+          ✉ Open our message
+        </button>
+      </div>
+
+      <!-- Simple illustration -->
+      <div class="illustration">
+        <div class="circle">
+          <div class="teacher-card">
+            <div class="teacher-icon">👩‍🏫</div>
+            <h3>Our Teacher</h3>
+            <p>Our everyday hero.</p>
+          </div>
+
+          <div class="small-note">
+            Thank you, Ma'am & Sir! ♡
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="message-section">
+    <div class="message-container">
+      <div class="message-label">A little message</div>
+
+      <h2>
+        You taught us more<br>
+        than <span>what books can say.</span>
+      </h2>
+
+      <p class="message">
+        Sa bawat lesson na inyong itinuro, may aral na higit pa
+        sa nakasulat sa libro. Sa bawat pagkakamali namin,
+        tinuruan ninyo kaming subukan muli. At sa bawat maliit
+        naming tagumpay, kayo ang isa sa mga taong tahimik na
+        proud sa amin.
+        <br><br>
+        Maraming salamat sa inyong oras, tiyaga, pang-unawa,
+        at malasakit. Baka makalimutan namin ang ilang lessons
+        balang araw, pero hindi namin makakalimutan ang
+        gurong naniwala sa amin.
+      </p>
+
+      <div class="signature">
+        With gratitude, from your students ♡
+      </div>
+    </div>
+  </section>
+
+  <!-- REASONS -->
+  <section class="reasons">
+    <div class="reasons-container">
+      <h2 class="section-title">Mga Aral na Baon Namin</h2>
+
+      <div class="cards">
+        <div class="reason-card">
+          <div class="reason-icon">🌱</div>
+          <h3>You helped us grow.</h3>
+          <p>
+            Hindi lang grades ang inyong pinapaunlad,
+            kundi pati ang aming confidence at character.
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">💡</div>
+          <h3>You made us curious.</h3>
+          <p>
+            Tinuruan ninyo kaming hindi lang mag-memorize,
+            kundi magtanong, mag-isip, at mangarap.
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">🫶</div>
+          <h3>You believed in us.</h3>
+          <p>
+            Sa mga araw na duda kami sa sarili,
+            may gurong nagsabing kaya namin.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Made with <strong>gratitude</strong> for every teacher who makes a difference.
+  </footer>
+
+  <!-- LETTER POPUP -->
+  <div class="letter-overlay" id="letterOverlay">
+    <div class="letter">
+      <button class="close-btn" onclick="closeLetter()">×</button>
+
+      <h2>Dear Ma'am & Sir,</h2>
+
+      <p>
+        Kung may isang bagay kaming gustong malaman ninyo,
+        ito ay ang katotohanang may mga estudyanteng hindi
+        makakarating sa kanilang mga pangarap kung wala
+        kayong naging bahagi ng journey nila.
+      </p>
+
+      <p>
+        Salamat sa pagtuturo kahit pagod na kayo.
+        Salamat sa pag-intindi kahit minsan mahirap kami intindihin.
+        At higit sa lahat, salamat sa paniniwala sa amin.
+      </p>
+
+      <p>
+        Hindi man namin masabi araw-araw,
+        mahalaga kayo sa kwento ng bawat isa sa amin.
+      </p>
+
+      <p>Happy Teachers' Month! 🌻</p>
+    </div>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("letterOverlay").classList.add("active");
+    }
+
+    function closeLetter() {
+      document.getElementById("letterOverlay").classList.remove("active");
+    }
+
+    // Close when clicking outside the letter
+    document.getElementById("letterOverlay").addEventListener("click", function(event) {
+      if (event.target === this) {
+        closeLetter();
+      }
+    });
+
+    // Close with ESC key
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeLetter();
+      }
+    });
+  </script>
+
+</body>
+</html>

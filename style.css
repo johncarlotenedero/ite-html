@@ -1,0 +1,239 @@
+/* Base Styling & Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* Glowing Neon Cyberpunk Mesh Background */
+  background: radial-gradient(circle at 10% 20%, #ff0075 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, #00f2fe 0%, transparent 40%),
+              radial-gradient(circle at 50% 50%, #7928ca 0%, transparent 50%),
+              #0d0221;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Animated Blobs */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+  animation: moveBlob 7s ease-in-out infinite alternate;
+}
+
+.p1 { width: 220px; height: 220px; background: #ffea00; top: 8%; left: 8%; }
+.p2 { width: 260px; height: 260px; background: #ff0075; bottom: 8%; right: 8%; }
+.p3 { width: 190px; height: 190px; background: #00e5ff; top: 45%; right: 12%; }
+
+@keyframes moveBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(25px, -25px) scale(1.1); }
+}
+
+/* Glassmorphism Outer Card */
+.card-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+              0 0 35px rgba(255, 0, 117, 0.25);
+  padding: 30px 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Top Pill Badge with Pulsing Dot */
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffea00;
+  margin-bottom: 22px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ffcc;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffcc;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Unique Image Frame Styling */
+.hero-photo-container {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  height: 210px;
+  margin: 0 auto 22px;
+}
+
+.photo-glow-back {
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(45deg, #ff0075, #ffea00, #00f2fe, #7928ca);
+  border-radius: 24px;
+  filter: blur(10px);
+  opacity: 0.8;
+  animation: glowRotate 5s linear infinite;
+}
+
+@keyframes glowRotate {
+  0% { filter: blur(10px) hue-rotate(0deg); }
+  100% { filter: blur(10px) hue-rotate(360deg); }
+}
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  background: #000;
+}
+
+.class-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Header & Text Styling */
+.warm-header {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.3rem;
+  color: #ffea00;
+  margin-bottom: 4px;
+  text-shadow: 0 0 8px rgba(255, 234, 0, 0.4);
+}
+
+.hero-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffffff, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 18px;
+}
+
+/* Glass Message Card */
+.glass-message-box {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 20px;
+}
+
+.message-paragraph {
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: #f0f0f0;
+}
+
+/* Sender Footer Styling */
+.sender-info {
+  margin-bottom: 22px;
+}
+
+.heart-icon {
+  font-size: 1.2rem;
+}
+
+.sender-text {
+  font-size: 0.8rem;
+  color: #c7c7c7;
+  margin-bottom: 2px;
+}
+
+.sender-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffea00;
+  text-shadow: 0 0 8px rgba(255, 234, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.sender-section {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #00f2fe;
+  margin-top: 2px;
+}
+
+/* Interactive Action Button */
+.interactive-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ff0075, #7928ca, #00f2fe);
+  background-size: 200% auto;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(255, 0, 117, 0.4);
+}
+
+.interactive-btn:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 242, 254, 0.5);
+}
+
+/* Hidden Surprise Section Toggle */
+.pop-message-hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  background: #ffea00;
+  color: #0d0221;
+  font-weight: 800;
+  font-size: 0.88rem;
+  border-radius: 14px;
+  margin-top: 0;
+  padding: 0 10px;
+}
+
+.pop-message-show {
+  max-height: 60px;
+  opacity: 1;
+  margin-top: 15px;
+  padding: 12px 10px;
+  box-shadow: 0 0 20px rgba(255, 234, 0, 0.8);
+}
